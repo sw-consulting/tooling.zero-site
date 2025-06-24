@@ -24,8 +24,8 @@
 
 
 services:
-  ui:
-    image: ghcr.io/maxirmx/zero-site:latest
+  zero-site:
+    image: ghcr.io/sw-consulting/zero-site:latest
     ports:
       - "80:80"
       - "443:443"
