@@ -27,6 +27,8 @@ FROM nginx:1.27-alpine AS final
 COPY config/public /var/www
 COPY config/nginx.conf /etc/nginx/conf.d/default.conf
 
+RUN sed -i 's/worker_processes.*auto;/worker_processes 1;/' /etc/nginx/nginx.conf
+
 EXPOSE 80
 EXPOSE 443
 CMD ["nginx", "-g", "daemon off;"]
