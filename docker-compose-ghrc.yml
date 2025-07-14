@@ -26,8 +26,9 @@
 services:
   zero-site:
     image: ghcr.io/sw-consulting/zero-site:latest
+    restart: always
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./certificate:/etc/nginx/certificate
+      - /home/$USER/.certificate:/etc/nginx/certificate
